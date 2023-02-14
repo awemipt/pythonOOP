@@ -27,7 +27,7 @@ class Handler:
             if m in self.__methods:
                 method = m.lower()
 
-                return self.__getattribute__(method)(func, request)
+                return getattr(self, method)(func, request)
 
         return wrapper
 
